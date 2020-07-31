@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Eau Claire's Salon_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Manage hair salon, July 31, 2020_
 
 #### By _**Ben White**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This application allows a user to add and view stylists for their hair salon, as well as, add and view clients for those stylists_
 
 ## Setup/Installation Requirements
 
@@ -28,11 +28,13 @@ Software Requirements:
   * $ dotnet restore
   * $ dotnet test
 
-## Specs
-
-Behavior|Input|Output
-------|------|------
-| |
+## User Stories
+* As the salon owner, I need to be able to see a list of all stylists.
+* As the salon owner, I need to be able to select a stylist, see their details, and see a list of all
+  clients that belong to that stylist.
+* As the salon owner, I need to add new stylists to our system when they are hired.
+* As the salon owner, I need to be able to add new clients to a specific stylist. I should not be able to
+  add a client if no stylists have been added.
 
 ## Known Bugs
 
