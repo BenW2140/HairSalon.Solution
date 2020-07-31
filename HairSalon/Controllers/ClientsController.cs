@@ -33,7 +33,7 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
-    public ActionResult Details(int id)
+    public ActionResult Show(int id)
     {
       Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
       return View(thisItem);
