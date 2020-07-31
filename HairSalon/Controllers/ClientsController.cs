@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFramworkCore;
 
 namespace HairSalon.Controllers
 {
@@ -16,7 +17,7 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Clients.ToList();
+      List<Client> model = _db.Clients.ToList();
       return View(model);
     }
 
@@ -35,8 +36,22 @@ namespace HairSalon.Controllers
 
     public ActionResult Show(int id)
     {
-      Item thisItem = _db.Items.FirstOrDefault(items => items.ItemId == id);
-      return View(thisItem);
+      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      return View(thisClient);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      return View(thisClient);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Client Client)
+    {
+      _db.Entry(Client).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
