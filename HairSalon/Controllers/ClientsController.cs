@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFramworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Controllers
 {
@@ -27,22 +27,22 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Client client)
+    public ActionResult Create(Client Client)
     {
-      _db.Clients.Add(client);
+      _db.Clients.Add(Client);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
-    public ActionResult Show(int id)
+    public ActionResult Details(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      Client thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
       return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
       return View(thisClient);
     }
 
@@ -56,14 +56,14 @@ namespace HairSalon.Controllers
 
     public ActionResult Delete(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
       return View(thisClient);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
+      var thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
       _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
