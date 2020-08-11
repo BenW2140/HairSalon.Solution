@@ -10,6 +10,22 @@ _This application allows a user to add and view stylists for their hair salon, a
 
 ## Setup/Installation Requirements
 
+Recreating the database:
+
+1. In the Administration window, select Data Import/Restore.
+
+2. In Import Options select Import from Self-Contained File.
+
+3. Navigate to the file that was created.
+
+4. Under Default Schema to be Imported To, select the New button.
+
+5. Enter a name for the database
+  * Click Ok.
+  * Click Start Import.
+
+6. Reopen the Schemas tab. Right click and select Refresh All and the database will appear
+
 Software Requirements:
 
 1. This program utilizes .NET version 2.2, and requires this framework to be pre-installed:
@@ -38,15 +54,15 @@ Software Requirements:
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_Possibly got the One-Many relationship backwards_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Ben White: bwhite2140@outlook.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Git, C#, .NET, Entity, SQL_
 
 ### License
 
